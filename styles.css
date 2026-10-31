@@ -1,0 +1,115 @@
+/* Campus Pulse - Stylesheet */
+
+/* Soft White Background & Global Typography */
+body {
+  background-color: #f8fafc; /* Soft White */
+  color: #0f172a;
+}
+
+/* Base Card Styling: Translucent Cornflower Blue */
+.card-event {
+  background-color: rgba(100, 149, 237, 0.35) !important;
+  color: #0f172a;
+  border-width: 3.5px !important;
+  border-style: solid !important;
+  box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.08) !important;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.card-event:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -2px rgba(15, 23, 42, 0.14) !important;
+}
+
+/* Selection Mode Styling */
+.card-event.card-selected {
+  outline: 4px solid #ef4444 !important;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3), 0 8px 20px -2px rgba(239, 68, 68, 0.25) !important;
+}
+
+/* 
+  Playing Card Suits & Border Colors:
+  - Green Hearts (♥): 2+ Days Later
+  - Yellow Clubs (♣): Tomorrow
+  - Red Diamonds (♦): Today
+  - Black Spades (♠): Is Over
+*/
+
+/* 1. Green Hearts (2+ Days) */
+.card-green {
+  border-color: #22c55e !important;
+}
+.card-green:hover {
+  border-color: #16a34a !important;
+}
+
+/* 2. Yellow Clubs (Tomorrow) */
+.card-yellow {
+  border-color: #eab308 !important;
+}
+.card-yellow:hover {
+  border-color: #ca8a04 !important;
+}
+
+/* 3. Red Diamonds (Today) */
+.card-red {
+  border-color: #ef4444 !important;
+}
+.card-red:hover {
+  border-color: #dc2626 !important;
+}
+
+/* 4. Black Spades (Is Over) */
+.card-black {
+  border-color: #0f172a !important;
+}
+.card-black:hover {
+  border-color: #000000 !important;
+}
+
+/* Floating Action Dock — fixed top-right, aligned with card grid top */
+.floating-dock {
+  position: fixed;
+  right: 1.5rem;
+  top: 13rem; /* clears sticky header + legend bar + selection banner area */
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+/* Clean Indeterminate Progress Bar */
+@keyframes indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-indeterminate {
+  animation: indeterminate 1.5s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  width: 50%;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
